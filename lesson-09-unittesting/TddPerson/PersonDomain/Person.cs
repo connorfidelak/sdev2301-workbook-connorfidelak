@@ -8,11 +8,21 @@ namespace PersonDomain
     {
         public string FirstName { get; }
         public string LastName { get; }
+        public string FullName => $"{LastName}, {FirstName}"; // Refactored code
+        //{ get
+        //    {
+        //        return $"{LastName}, {FirstName}";
+        //    }
+        //}
+        public string? PreferredName {  get; }
+        public string DisplayName => PreferredName ?? FullName;
 
-        public Person(string firstName, string lastName)
+
+        public Person(string firstName, string lastName, string? preferredName = null)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            FirstName = firstName.Trim();
+            LastName = lastName.Trim();
+            PreferredName = preferredName?.Trim();
         }
     }
 }
