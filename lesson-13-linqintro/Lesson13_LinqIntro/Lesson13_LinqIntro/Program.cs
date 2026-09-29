@@ -119,7 +119,11 @@ foreach (var student in highToLow)
 // TODO: Complete worksheet tasks A1-A5.
 // Predict each result type, then print the results.
 
-
+IEnumerable<Pokemon> waterType = pokedex.Where(pokedex => pokedex.Type1 == "Water");
+IEnumerable<Pokemon> legendary = pokedex.Where(pokedex => pokedex.IsLegendary == true);
+IEnumerable<Pokemon> speed = pokedex.Where(pokedex => pokedex.Speed >= 90);
+IEnumerable<Pokemon> total = pokedex.Where(pokedex => pokedex.Total < 320);
+IEnumerable<Pokemon> secondType = pokedex.Where(pokedex => pokedex.Type2 != null);
 
 #endregion
 
@@ -127,6 +131,12 @@ foreach (var student in highToLow)
 // TODO: Complete worksheet tasks B6-B8.
 // Predict each result type, then print the results.
 
+IEnumerable<string> pokeName = pokedex.Select(pokedex => pokedex.Name);
+
+foreach (var pokemon in pokeName)
+{
+    Console.WriteLine($"{pokemon}");
+}
 
 #endregion
 
