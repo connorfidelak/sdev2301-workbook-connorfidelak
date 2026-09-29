@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="OopPractice.Tests/OopPractice.Tests.csproj" />
+  <Project Path="OopPractice/OopPractice.csproj" />
+</Solution>
