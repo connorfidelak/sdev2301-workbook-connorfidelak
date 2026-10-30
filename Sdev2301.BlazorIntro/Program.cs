@@ -1,10 +1,16 @@
 using Sdev2301.BlazorIntro.Components;
+using Sdev2301.BlazorIntro.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+// Register the service
+builder.Services.AddScoped<ProductDisplayService>();
+builder.Services.AddSingleton<SingletonMarker>();
+builder.Services.AddScoped<ScopedMarker>();
+builder.Services.AddTransient<TransientMarker>();
 
 var app = builder.Build();
 
